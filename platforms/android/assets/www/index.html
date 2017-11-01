@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" href="css/onsenui.css">
+  <link rel="stylesheet" href="css/onsen-css-components.min.css">
+  <script src="js/onsenui.min.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
+
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+
+</head>
+
+<style>
+
+</style>
+
+<body>
+
+  <ons-splitter>
+    <ons-splitter-side id="menu" side="right" width="220px" collapse>
+      <ons-page>
+        <ons-list>
+          <ons-list-item onclick="fn.load('home.html')" tappable>
+            Home
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('login.html')" tappable>
+            Login
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('register.html')" tappable>
+            Register
+          </ons-list-item>
+
+          <ons-list-item onclick="fn.load('Contact.html')" tappable>
+            Contact
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('about.html')" tappable>
+            About
+          </ons-list-item>
+
+
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side>
+    <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+  </ons-splitter>
+
+
+  <template id="home.html">
+    <ons-page>
+      <ons-toolbar>
+
+        <div class="right">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          PSU-PIN
+        </div>
+      </ons-toolbar>
+      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+        Swipe right to open the menu!
+      </p>
+
+      <ons-tabbar swipeable position="auto">
+        <ons-tab page="time.html" id="timetab" label="Timeline" icon="fa-clock-o" active>
+        </ons-tab>
+        <ons-tab page="new.html" label="New Pin" icon="fa-thumb-tack" active-icon="fa-thumb-tack">
+        </ons-tab>
+        <!-- <ons-tab page="map.html" label="Pin Map" icon="fa-globe" badge="7"  active-icon="fa-globe">
+            </ons-tab> -->
+        <!-- <ons-tab page="login.html" label="login" icon="fa-lock" active-icon="fa-lock">
+            </ons-tab> -->
+
+      </ons-tabbar>
+    </ons-page>
+  </template>
+
+  <template id="Contact.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-back-button onclick="goBack()">Back</ons-back-button>
+        </div>
+        <div class="right">
+
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Contact
+        </div>
+      </ons-toolbar><br>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3" align="center">
+          <h2>Contact me</h2>
+
+          <div align="left" style="padding-left: 30%;">
+            <i class="fa fa-map-marker"></i>
+            <span>Takuapa Phang-nga</span><br>
+
+            <i class="fa fa-phone"></i>
+            <span>082804572</span><br>
+
+            <i class="fa fa-envelope-o"></i>
+            <span>piggyBear@hotmail.com</span><br>
+
+            <i class="fa fa-facebook"></i>
+            <span>Piggy Bear</span><br>
+          </div>
+
+        </div>
+
+      </div>
+      <br><br><br><br><br>
+      <hr>
+      <div align="center">
+
+        <h2>Send us a message</h2>
+      </div>
+
+      <br>
+      <div class="col-md-6 col-md-offset-3">
+        <form action="contact">
+
+          <div class="col-md-5 col-md-offset-1 contact-form-left">
+
+            <ons-input id="name" modifier="underbar" placeholder="NAME*" float></ons-input>
+            <ons-input id="email" modifier="underbar" placeholder="EMAIL*" float></ons-input>
+            <ons-input id="subject" modifier="underbar" placeholder="SUBJECT*" float></ons-input> <br>
+            <br>
+          </div>
+          <div class="col-md-5 contact-form-right text-right">
+            <textarea class="textarea" name="message" id="message" cols="30" rows="10" placeholder="MESSAGE"></textarea>
+
+            <br>
+            <br><input type="submit" class="btn btn-info" value="send message">
+          </div>
+
+
+        </form>
+
+      </div>
+
+    </ons-page>
+  </template>
+
+  <template id="about.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-back-button onclick="goBack()">Back</ons-back-button>
+        </div>
+
+        <div class="right">
+
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          About
+        </div>
+      </ons-toolbar>
+
+    </ons-page>
+  </template>
+
+  <template id="time.html">
+    <ons-page id="time" style="width: 100%;">
+      <div id="pins">
+
+
+
+        <center>
+          <table class="table" style="width:100%;">
+
+            <tr style="width:100%;">
+              <td style="width:100%;">
+                <ons-card class="post">
+                  <ons-list-item class="post_title">
+                    <div class="left">
+                      <img class="list-item__thumbnail" src="https://firebasestorage.googleapis.com/v0/b/psu-pin.appspot.com/o/photo%2F1.jpg?alt=media&token=01df3b9c-33ad-48d7-9050-d1d0f3b1bd2a">
+                    </div>
+                    <div class="center">
+                      <div class="list-item__title"><b>Piggy Bear</b></div>
+                      <div class="list-item__subtitle" style="font-size: 12px">1 HOUR AGO</div>
+                    </div>
+                  </ons-list-item>
+
+                  <div style="text-align: center; position: relative;" ondblclick="like(1)"><br>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/psu-pin.appspot.com/o/photo%2F2.jpg?alt=media&token=be22b0d1-0812-4468-8a77-5b7a8c2aaef9" alt="" width="80%">
+                    <img class="post-image" src="{{photo}}">
+                  </div>
+
+                  <ons-list-item class="post-button-bar" modifier="nodivider">
+                    <div class="center" style="padding-top: 0px">
+                      <ons-button class="post-button" modifier="quiet" onclick="like(1)">
+                        <ons-icon id="button-post-like-1" icon="fa-thumbs-o-up"></ons-icon> 69 Like</ons-button>
+                    </div>
+                  </ons-list-item>
+                  <div class="post-caption"><b>Backpack in Hokkaido with someone^^</b> <br></div>
+                </ons-card>
+              </td>
+            </tr>
+            <tr style="width:100%;">
+              <td style="width:100%;">
+
+
+                <ons-card class="post">
+                  <ons-list-item class="post_title">
+                    <div class="left">
+                      <img class="list-item__thumbnail" src="https://firebasestorage.googleapis.com/v0/b/psu-pin.appspot.com/o/photo%2F1.jpg?alt=media&token=01df3b9c-33ad-48d7-9050-d1d0f3b1bd2a">
+                    </div>
+                    <div class="center">
+                      <div class="list-item__title"><b>Piggy Bear</b></div>
+                      <div class="list-item__subtitle" style="font-size: 12px">2 DAY AGO</div>
+                    </div>
+                  </ons-list-item>
+
+                  <div style="text-align: center; position: relative;" ondblclick="like(1)"><br>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/psu-pin.appspot.com/o/photo%2F3.jpg?alt=media&token=7aff47d0-35e8-4e09-92c7-828555384146" alt="" width="80%">
+                    <img class="post-image" src="{{photo}}">
+                  </div>
+
+                  <ons-list-item class="post-button-bar" modifier="nodivider">
+                    <div class="center" style="padding-top: 0px">
+                      <ons-button class="post-button" modifier="quiet" onclick="like(1)">
+                        <ons-icon id="button-post-like-1" icon="fa-thumbs-o-up"></ons-icon> 459 Like</ons-button>
+                    </div>
+                  </ons-list-item>
+                  <div class="post-caption"><b>ทุกการเดินทางย่อมมีจุดหมายปลายทางเสมอ!</b> <br></div>
+                </ons-card>
+              </td>
+            </tr>
+          </table>
+        </center>
+      </div>
+
+
+      </div>
+    </ons-page>
+  </template>
+
+
+
+  <template id="time2.html">
+    <ons-page id="time2">
+      <div id="pins" align="center">
+        <h1>t2</h1>
+        <input type="search" value="" placeholder="Search" class="search-input" style="width: 280px;">
+      </div>
+
+
+
+    </ons-page>
+
+  </template>
+
+  <template id="new.html">
+    <ons-page id="helloworld-page">
+      <script src="js/mapLocation.js"></script>
+
+      <p style="text-align: center"><br><br>
+        <ons-button id="hello">Take a photo</ons-button>
+        <!-- <ons-button id="location">Get Location</ons-button> -->
+        <!-- <ons-button id="scan">Scan</ons-button> -->
+
+        <img src="" style="width:100%" id="preview">
+
+        <p id="geolocation"></p>
+        <center>
+          <ons-button>Upload Pin</ons-button>
+        </center>
+
+    </ons-page>
+  </template>
+
+  <template id="map.html">
+    <ons-page id="map">
+      <p style="text-align: center;">
+        This is the second page.
+      </p>
+    </ons-page>
+  </template>
+
+
+  <template id="login.html">
+    <ons-page id="login">
+      <ons-toolbar>
+        <div class="left">
+          <ons-back-button onclick="goBack()">Back</ons-back-button>
+        </div>
+
+        <div class="right">
+
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Login
+        </div>
+      </ons-toolbar>
+      <div style="text-align: center; margin-top: 30px;" class="col-md-6 col-md-offset-3">
+        <div align="center">
+          <br>
+          <p>
+            <ons-input id="username" modifier="underbar" placeholder="Username" float></ons-input>
+          </p>
+          <p>
+            <ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
+          </p>
+        </div>
+
+        <br>
+
+
+        <div style="padding-left: 20%;">
+          <a> Forgotten account? </a>
+        </div>
+
+        <p style="margin-top: 30px;" align="center">
+          <input type="Submit" name="Login" class="btn btn-info">
+        </p>
+
+        <hr>
+
+        <button class="loginBtn loginBtn--facebook">
+  Login with Facebook&nbsp;
+</button>
+
+        <button class="loginBtn loginBtn--google">
+  Login with Google&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+</button>
+
+      </div>
+    </ons-page>
+  </template>
+
+  <template id="register.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-back-button onclick="goBack()">Back</ons-back-button>
+        </div>
+
+        <div class="right">
+
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Register
+        </div>
+      </ons-toolbar>
+      <div align="center">
+
+        <p>
+          <ons-input id="Email" modifier="underbar" placeholder="Email" float></ons-input>
+        </p>
+        <p>
+          <ons-input id="Password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
+        </p>
+
+        <center>
+          <button class="loginBtn loginBtn--page" onclick="handSignUp()">
+                  Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+                  </button>
+          <center>
+      </div>
+
+    </ons-page>
+  </template>
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBJiLZXdsRm00Au-AHBVKVvWdLjcwsoekU",
+      authDomain: "psu-pin.firebaseapp.com",
+      databaseURL: "https://psu-pin.firebaseio.com",
+      projectId: "psu-pin",
+      storageBucket: "psu-pin.appspot.com",
+      messagingSenderId: "386856446538"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
